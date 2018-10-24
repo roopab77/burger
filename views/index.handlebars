@@ -1,0 +1,68 @@
+<div class="container"style="margin : 0px auto;padding:0px" ></div>
+<div class="jumbotron" style="margin : 5px auto;padding:60px" >
+  <h1>Eat da Burgers!</h1>
+</div>
+
+  <div class="row" style="width:100%">
+  <div class="col-md-6" >
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 >Burgers yet to be Eaten</h3>
+      </div>
+      <div class="panel-body">
+        <ul class="list-group">
+          {{#each burgers}} {{#unless this.devoured}}
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-md-4 ">{{this.burger_name}}</div>
+              <div class="col-md-6">
+                <form class="form-inline">
+                  <button type="submit" class="noise_btn noise_btn--border  change-devour" value="{{this.id}}">DEVOUR IT!</button>
+                </form>
+              </div>
+            </div>
+          </li>
+          {{/unless}} {{/each}}
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6" style="margin : 0px auto;padding:0px">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 >Burgers Devoured.</h3>
+      </div>
+      <div class="panel-body">
+        <ul class="list-group">
+          {{#each burgers}} {{#if this.devoured}}
+          <li class="list-group-item">
+            {{this.burger_name}}
+          </li>
+          {{/if}} {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ 
+<div class="jumbotron">
+<div class="card">
+  <div class="card-header">
+   <h2>Add a Burger</h2>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"> </h5>
+    <p class="card-text">What type of burger you want to eat next, then DEVOUR IT.</p>
+    <form class="create-form">
+    <div class="form-group">      
+           <input type="text" class="form-control" id="burger-name" name="name" >
+    </div>
+    <button class="btn btn-large btn-primary" type="submit">SUBMIT</button>
+  </form>
+  </div>
+</div>
+</div></div>
+ 
